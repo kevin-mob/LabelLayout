@@ -36,24 +36,6 @@ public class DemoActivity extends AppCompatActivity {
         list.add("走上人生巅峰，想想还有点小激动");
         TextLabelAdapter adapter = new TextLabelAdapter(list);
         labelLayout.setAdapter(adapter);
-
-
-
-        /*List<Integer> list = new ArrayList<>();
-        list.add(R.mipmap.ic_launcher);
-        list.add(R.mipmap.ic_launcher);
-        list.add(R.mipmap.ic_launcher);
-        list.add(R.mipmap.ic_launcher);
-        list.add(R.mipmap.ic_launcher);
-        list.add(R.mipmap.ic_launcher);
-        list.add(R.mipmap.ic_launcher);
-        list.add(R.mipmap.ic_launcher);
-        list.add(R.mipmap.ic_launcher);
-        list.add(R.mipmap.ic_launcher);
-        ImageLabelAdapter adapter = new ImageLabelAdapter(list);
-        labelLayout.setAdapter(adapter);
-*/
-
     }
 
     class TextLabelAdapter extends LabelAdapter<String> {
@@ -68,21 +50,6 @@ public class DemoActivity extends AppCompatActivity {
         @Override
         public View getLabelView(ViewGroup parent) {
             return LayoutInflater.from(DemoActivity.this).inflate(R.layout.label, parent, false);
-        }
-    }
-
-    class ImageLabelAdapter extends LabelAdapter<Integer> {
-        public ImageLabelAdapter(List<Integer> models) {
-            super(models);
-        }
-        @Override
-        public void onDataSet(View labelView, Integer resId) {
-            ((ImageView)labelView).setImageResource(resId);
-        }
-
-        @Override
-        public View getLabelView(ViewGroup parent) {
-            return LayoutInflater.from(DemoActivity.this).inflate(R.layout.label2, parent, false);
         }
     }
 }

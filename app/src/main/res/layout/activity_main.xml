@@ -14,7 +14,7 @@
     <cn.kevin.labellayout.LabelLayout
         android:id="@+id/label_layout"
         android:layout_marginLeft="40dp"
-        app:label_gravity="center"
+        app:label_gravity="left"
         android:layout_marginRight="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
