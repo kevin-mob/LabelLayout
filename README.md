@@ -43,7 +43,7 @@ compile 'cn.kevin:labellayout:1.0.0'
 
 ## 4.代码演示 也可参考demo中的代码
 
-### 1.在布局文件中加入BannerViewPager
+### 1.在布局文件中加入LabelLayout
 ```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
