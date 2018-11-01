@@ -28,6 +28,7 @@ public class LabelLayout extends ViewGroup implements View.OnClickListener {
     LabelAdapter mAdapter;
     int mHeight;
     private OnItemClickListener onItemClickListener;
+    private boolean isAttached;
 
     public LabelLayout(Context context) {
         this(context, null);
@@ -51,13 +52,6 @@ public class LabelLayout extends ViewGroup implements View.OnClickListener {
         t.recycle();
     }
 
-    @Override
-    protected void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        initView();
-        setupEvent();
-    }
-
     private void setupEvent() {
         if (onItemClickListener != null){
             for (int i = 0; i < getChildCount(); i++) {
@@ -68,6 +62,11 @@ public class LabelLayout extends ViewGroup implements View.OnClickListener {
 
     public void setAdapter(LabelAdapter adapter) {
         mAdapter = adapter;
+        removeAllViews();
+        mLabelViews.clear();
+        labelRegionMap.clear();
+        mHeight = 0;
+        initView();
     }
 
     private void initView() {
@@ -84,6 +83,8 @@ public class LabelLayout extends ViewGroup implements View.OnClickListener {
             mAdapter.onDataSet(child, mAdapter.getItem(i));
             addView(child);
         }
+
+        setupEvent();
     }
 
     @Override
